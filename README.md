@@ -9,6 +9,7 @@ Usage information for individual commands can be found in their respective direc
 * [`cli`](/cli)
 * [`auth`](/auth)
 * [`kubectl`](/kubectl)
+* [`kubectl-config`](/kubectl-config)
 
 ## License
 
