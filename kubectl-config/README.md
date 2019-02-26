@@ -1,9 +1,9 @@
 # GitHub Action for Google Cloud
 
-The GitHub Actions for [Google Cloud Platform](https://cloud.google.com/) and wraps the [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) to operate your kubernetes cluster. This is a thin wrapper around the `kubectl` utility.
+The GitHub Actions for [Google Cloud Platform](https://cloud.google.com/) and wraps the [gcloud SDK](https://cloud.google.com/sdk/) for setting kubectl configs. This is a thin wrapper around the `gcloud config` command, setting your project and kubernetes credential using [Environment variables](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
 
 ## Usage
-An example workflow to list kubernetes pods on Google Cloud Platform:
+An example workflow to list clusters on Google Cloud Platform:
 
 ```
 workflow "Run gcloud command" {
@@ -25,16 +25,9 @@ action "Set kubectl config" {
     K8S_CLUSTER_NAME = "your-gke-cluster"
   }
 }
-
-action "GCP List Clusters" {
-  needs = ["Set kubectl config"]
-  uses = "actions/gcloud/kubectl@master"
-  args = "get pod"
-}
 ```
 
 For more information about the authentication step, [see `auth`](/auth).
-For more information about the kubectl settings step, [see `kubectl-config`](/kubectl-config).
 
 ## License
 
