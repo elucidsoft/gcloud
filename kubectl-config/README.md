@@ -21,7 +21,7 @@ action "Set kubectl config" {
   uses = "actions/gcloud/kubectl-config@master"
   env = {
     GCLOUD_ZONE = "your-gcp-region"
-    GCLOUD_PROJCT = "your-gcp-project"
+    GCLOUD_PROJECT = "your-gcp-project"
     K8S_CLUSTER_NAME = "your-gke-cluster"
   }
 }
